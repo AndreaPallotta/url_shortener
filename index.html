@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="bulma.min.css">
+    <script type="text/javascript" src="index.js" defer></script>
+</head>
+<body onload="onLoad()">
+
+    <!-- Navbar -->
+    <nav class="navbar is-primary">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <h1 class="title">URL Shortener</h1>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="subtitle">Create Short URL</h2>
+            <div class="field">
+                <label class="label">Full URL</label>
+                <div class="control">
+                    <input class="input" type="text" id="fullUrl" placeholder="Enter full URL">
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-primary" id="generateBtn" onclick="addNewUrl()">Generate Short URL</button>
+            </div>
+
+            <hr>
+
+            <h2 class="subtitle">Your Short URLs</h2>
+            <table class="table is-bordered is-striped is-hoverable">
+                <thead>
+                    <tr>
+                        <th>Short URL</th>
+                        <th>Full URL</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="urlTableBody">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+
+            <div class="control">
+                <button class="button is-danger" id="deleteAllBtn" onclick="deleteUrl()">Delete All URLs</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
